@@ -96,7 +96,7 @@ export const NewsList: React.FC<NewsListProps> = ({ news, onAddNews, onUpdateNew
             placeholder="По заголовку, содержанию или автору..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="input"
+            className="input max-w-full"
           />
         </div>
         <div className="w-full xs:w-48">

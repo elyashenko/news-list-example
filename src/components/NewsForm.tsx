@@ -55,7 +55,7 @@ export const NewsForm: React.FC<NewsFormProps> = ({ news, onSubmit, onCancel }) 
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                className="input"
+                className="input max-w-full"
                 placeholder="Введите заголовок новости"
                 required
               />
@@ -70,7 +70,7 @@ export const NewsForm: React.FC<NewsFormProps> = ({ news, onSubmit, onCancel }) 
                 name="content"
                 value={formData.content}
                 onChange={handleChange}
-                className="input min-h-[120px] resize-none"
+                className="input min-h-[120px] resize-none break-words"
                 placeholder="Введите содержание новости"
                 required
               />
@@ -86,7 +86,7 @@ export const NewsForm: React.FC<NewsFormProps> = ({ news, onSubmit, onCancel }) 
                 name="author"
                 value={formData.author}
                 onChange={handleChange}
-                className="input"
+                className="input max-w-full"
                 placeholder="Введите имя автора"
                 required
               />

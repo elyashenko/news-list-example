@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ru';
 
 export const generateId = (): string => {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+  return dayjs().valueOf().toString(36) + Math.random().toString(36).substr(2);
 };
 
 export const formatDate = (dateString: string): string => {

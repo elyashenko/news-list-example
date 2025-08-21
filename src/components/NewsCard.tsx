@@ -17,7 +17,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news, onEdit, onDelete }) =>
   return (
     <div className="card p-4 hover:shadow-md transition-shadow duration-200 cursor-default">
       <div className="flex justify-between items-start mb-3">
-        <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 flex-1 mr-3">
+        <h3 className="text-lg font-semibold text-gray-900 flex-1 mr-3 break-words">
           {news.title}
         </h3>
         <div className="flex gap-2 flex-shrink-0">
@@ -38,7 +38,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({ news, onEdit, onDelete }) =>
         </div>
       </div>
       
-      <p className="text-gray-600 text-sm mb-3 line-clamp-3">
+      <p className="text-gray-600 text-sm mb-3 break-words">
         {news.content}
       </p>
       
