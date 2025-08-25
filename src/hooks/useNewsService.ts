@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { NewsService } from '../services/NewsService';
 import { storageFactory } from '../storage/StorageFactory';
+import { log } from '../utils/logger';
 import type { News, NewsFormData } from '../types/news';
 
 export function useNewsService() {
@@ -16,7 +17,7 @@ export function useNewsService() {
         const allNews = newsService.getAllNews();
         setNews(allNews);
       } catch (error) {
-        console.error('Error loading news:', error);
+        log.error('Error loading news:', error);
       } finally {
         setIsLoading(false);
       }

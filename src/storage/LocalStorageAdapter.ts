@@ -1,4 +1,5 @@
 import type { IStorage } from '../types/storage';
+import { log } from '../utils/logger';
 
 export class LocalStorageAdapter implements IStorage {
   get<T>(key: string): T | null {
@@ -6,7 +7,7 @@ export class LocalStorageAdapter implements IStorage {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : null;
     } catch (error) {
-      console.error(`Error reading localStorage key "${key}":`, error);
+      log.error(`Error reading localStorage key "${key}":`, error);
       return null;
     }
   }
@@ -15,7 +16,7 @@ export class LocalStorageAdapter implements IStorage {
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      console.error(`Error setting localStorage key "${key}":`, error);
+      log.error(`Error setting localStorage key "${key}":`, error);
     }
   }
 
@@ -23,7 +24,7 @@ export class LocalStorageAdapter implements IStorage {
     try {
       window.localStorage.removeItem(key);
     } catch (error) {
-      console.error(`Error removing localStorage key "${key}":`, error);
+      log.error(`Error removing localStorage key "${key}":`, error);
     }
   }
 
@@ -31,7 +32,7 @@ export class LocalStorageAdapter implements IStorage {
     try {
       window.localStorage.clear();
     } catch (error) {
-      console.error('Error clearing localStorage:', error);
+      log.error('Error clearing localStorage:', error);
     }
   }
 
@@ -39,7 +40,7 @@ export class LocalStorageAdapter implements IStorage {
     try {
       return window.localStorage.getItem(key) !== null;
     } catch (error) {
-      console.error(`Error checking localStorage key "${key}":`, error);
+      log.error(`Error checking localStorage key "${key}":`, error);
       return false;
     }
   }
